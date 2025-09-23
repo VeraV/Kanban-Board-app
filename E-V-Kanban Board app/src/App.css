@@ -1,4 +1,37 @@
 #side-bar {
-  justify-content: flex;
+  display: flex;
   flex-direction: column;
+  background-color: grey;
+  height: 100vh;
+  width: 20vw;
+  justify-content: center;
+  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#side-bar ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+#side-bar li button {
+  background: none;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+
+  text-align: left;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+#side-bar li button:hover {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
 }
