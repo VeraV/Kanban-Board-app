@@ -1,0 +1,4 @@
+#side-bar {
+  justify-content: flex;
+  flex-direction: column;
+}
