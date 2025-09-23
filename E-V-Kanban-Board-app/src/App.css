@@ -1,11 +1,13 @@
 #side-bar {
   display: flex;
   flex-direction: column;
-  background-color: grey;
-  height: 100vh;
+  background-color: rgb(250, 224, 190);
+  height: 85vh;
   width: 20vw;
   justify-content: center;
   box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden; /* hide content when width=0 */
+  transition: width 0.3s ease;
 }
 
 #side-bar ol {
@@ -32,6 +34,14 @@
 
 #side-bar li button:hover {
   background-color: white;
-  color: black;
-  border-radius: 20px;
+  color: chocolate;
+  border-radius: 15px;
+}
+
+#logo-image img {
+  position: absolute;
+  width: 600px;
+  height: auto;
+  right: 290px;
+  top: 80px;
 }

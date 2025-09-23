@@ -1,6 +1,11 @@
-function Sidebar({ sideBar }) {
+function Sidebar({ isOpen }) {
   return (
-    <nav id="side-bar">
+    <nav
+      id="side-bar"
+      style={{
+        width: isOpen ? "250px" : "0px", // width changes when open/close
+      }}
+    >
       <ol>
         <li>
           <button>Home Page</button>
@@ -9,7 +14,6 @@ function Sidebar({ sideBar }) {
           <button>Main Page</button>
         </li>
       </ol>
-      {sideBar}
     </nav>
   );
 }
