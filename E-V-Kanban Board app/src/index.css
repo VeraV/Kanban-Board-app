@@ -47,3 +47,35 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+
+.Home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+header {
+  background-color: chocolate;
+  height: 10%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header img {
+  width: 10vh;
+  padding: 5px 10px;
+}
+
+header h1 {
+  padding-left: 30px;
+}
+
+footer {
+  background-color: antiquewhite;
+  height: 10%;
+  position: bottom;
+  text-align: center;
+  padding-top: 2%;
+}
