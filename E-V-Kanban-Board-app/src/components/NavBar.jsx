@@ -3,13 +3,13 @@ import navIcon from "../assets/iconbar.png";
 
 function NavBar({ toggleSidebar }) {
   return (
-    <header>
+    <div className="navbar">
       <img src={logo} alt="Logo" />
       <h1>Kanban</h1>
       <button id="icon-bar" onClick={toggleSidebar}>
         <img src={navIcon} alt="Menu" />
       </button>
-    </header>
+    </div>
   );
 }
 

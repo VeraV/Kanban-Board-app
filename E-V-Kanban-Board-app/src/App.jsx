@@ -19,7 +19,7 @@ function App() {
             <div className="Home-page">
               <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
               <Sidebar isOpen={isSidebarOpen} />
-              <Logo />
+              <Logo isSidebarOpen={isSidebarOpen} />
               <Footer />
             </div>
           }

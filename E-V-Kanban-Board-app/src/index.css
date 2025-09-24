@@ -48,7 +48,7 @@ h1 {
   }
 }
 
-header {
+.Home-page .navbar {
   background-color: chocolate;
   height: 10vh;
   display: flex;
@@ -56,15 +56,36 @@ header {
   align-items: center;
 }
 
-header img {
+.Home-page .navbar img {
   width: 8vh;
   padding: 5px 10px;
 }
 
-header h1 {
+.Home-page .navbar h1 {
   padding-left: 10px;
 }
 
+.Main-page .navbar {
+  background-color: chocolate;
+  height: 10vh;
+  display: flex;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Main-page .navbar img {
+  width: 8vh;
+  padding: 5px 10px;
+}
+
+.Main-page .navbar h1 {
+  padding-left: 10px;
+}
 #icon-bar {
   all: unset;
   position: absolute;

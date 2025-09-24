@@ -1,4 +1,4 @@
-#side-bar {
+.Home-page #side-bar {
   display: flex;
   flex-direction: column;
   background-color: rgb(250, 224, 190);
@@ -6,7 +6,19 @@
   width: 20vw;
   justify-content: center;
   box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
-  overflow-x: hidden; /* hide content when width=0 */
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+}
+
+.Main-page #side-bar {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 224, 190);
+  width: 20vw;
+  justify-content: center;
+  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
   transition: width 0.3s ease;
 }
 
@@ -20,30 +32,36 @@
   gap: 60px;
 }
 
-#side-bar li button {
+#side-bar a {
   background: none;
   font-size: 30px;
   border: none;
   cursor: pointer;
-
+  color: white;
   text-align: left;
   border-radius: 20px;
   transition: background-color 0.3s ease, color 0.3s ease,
     border-radius 0.3s ease;
 }
 
-#side-bar li button:hover {
-  background-color: white;
+#side-bar a:hover {
   color: chocolate;
+  background-color: white;
+
   border-radius: 15px;
 }
 
-#logo-image img {
+.logo-image {
   position: absolute;
+  top: 80px;
+  left: 470px;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-image img {
   width: 600px;
   height: auto;
-  right: 290px;
-  top: 80px;
 }
 
 #kanban-list {
