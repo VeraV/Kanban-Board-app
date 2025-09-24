@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Sidebar({ isOpen }) {
   return (
     <nav
@@ -8,10 +10,10 @@ function Sidebar({ isOpen }) {
     >
       <ol>
         <li>
-          <button>Home Page</button>
+          <Link to="/">Home Page</Link>
         </li>
         <li>
-          <button>Main Page</button>
+          <Link to="/kanban">Main Page</Link>
         </li>
       </ol>
     </nav>

@@ -1,19 +1,42 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Logo from "./components/Logo";
+import KanbanList from "./components/List";
 import { useState } from "react";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <div className="Home-page">
-      <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-      <Sidebar isOpen={isSidebarOpen} />
-      <Logo />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="Home-page">
+              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+              <Sidebar isOpen={isSidebarOpen} />
+              <Logo />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/kanban"
+          element={
+            <div className="Main-page">
+              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+              <Sidebar isOpen={isSidebarOpen} />
+              <KanbanList />
+            </div>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
 

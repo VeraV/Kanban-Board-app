@@ -45,3 +45,9 @@
   right: 290px;
   top: 80px;
 }
+
+#kanban-list {
+  position: absolute;
+  left: 22vw;
+  top: 10vh;
+}
