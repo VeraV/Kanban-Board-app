@@ -3,7 +3,7 @@ function Sidebar({ isOpen }) {
     <nav
       id="side-bar"
       style={{
-        width: isOpen ? "250px" : "0px", // width changes when open/close
+        width: isOpen ? "250px" : "0px",
       }}
     >
       <ol>
