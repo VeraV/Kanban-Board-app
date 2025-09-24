@@ -4,9 +4,14 @@ import ListItemCard from "./ListItemCard";
 
 function KanbanList() {
   const [items, setItems] = useState(kanbanData);
+  const [expandedCardId, setExpandedCardId] = useState(null);
 
   function handleRemoveCard(itemIdToRemove) {
     setItems(items.filter((item) => item.id !== itemIdToRemove));
+  }
+
+  function handleExpandCard(id) {
+    setExpandedCardId((prev) => (prev === id ? null : id));
   }
 
   return (
@@ -17,6 +22,8 @@ function KanbanList() {
             key={item.id}
             item={item}
             handleRemoveCard={handleRemoveCard}
+            handleExpandCard={handleExpandCard}
+            expanded={expandedCardId === item.id}
           />
         ))}
       </ul>

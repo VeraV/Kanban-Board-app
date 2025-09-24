@@ -1,4 +1,4 @@
-function ListItemCard({ item, handleRemoveCard }) {
+function ListItemCard({ item, handleRemoveCard, handleExpandCard, expanded }) {
   const {
     id,
     title,
@@ -14,7 +14,8 @@ function ListItemCard({ item, handleRemoveCard }) {
   const classListFooter = `cardFooter priority${priority}Footer`;
 
   return (
-    <div className="card">
+    <div className={`card ${expanded ? "expanded" : ""}`}>
+      {/* Header */}
       <section className={classListHeader}>
         <h4>{title}</h4>
         <div className="due-date">
@@ -23,27 +24,28 @@ function ListItemCard({ item, handleRemoveCard }) {
         </div>
         <span>{status === "Done" ? "✔️" : "❌"}</span>
       </section>
-      <section className="cardBody">
-        <p>{description}</p>
-        <p>
-          <i>
-            <strong>Assigned to: </strong>
-            {assignee}
-          </i>
-        </p>
-      </section>
+
+      {/* Body (only visible if expanded) */}
+      {expanded && (
+        <section className="cardBody">
+          <p>{description}</p>
+          <p>
+            <i>
+              <strong>Assigned to: </strong>
+              {assignee}
+            </i>
+          </p>
+        </section>
+      )}
+
+      {/* Footer */}
       <section className={classListFooter}>
         <p>Created: {createdDate}</p>
-        <button
-          onClick={() => {
-            handleRemoveCard(id);
-          }}
-        >
-          Delete
+        <button onClick={() => handleRemoveCard(id)}>Delete</button>
+        <button onClick={() => handleExpandCard(id)}>
+          {expanded ? "Collapse" : "Expand"}
         </button>
       </section>
-
-      {/*<p>Priority: {priority}</p>*/}
     </div>
   );
 }
