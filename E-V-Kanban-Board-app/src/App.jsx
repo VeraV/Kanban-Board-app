@@ -31,7 +31,7 @@ function App() {
             <div className="Main-page">
               <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
               <Sidebar isOpen={isSidebarOpen} />
-              <KanbanList />
+              <KanbanList isSidebarOpen={isSidebarOpen} />
             </div>
           }
         />

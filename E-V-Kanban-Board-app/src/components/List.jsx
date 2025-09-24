@@ -2,7 +2,7 @@ import kanbanData from "../assets/kanban.json";
 import { useState } from "react";
 import ListItemCard from "./ListItemCard";
 
-function KanbanList() {
+function KanbanList({ isSidebarOpen }) {
   const [items, setItems] = useState(kanbanData);
   const [expandedCardId, setExpandedCardId] = useState(null);
 
@@ -24,6 +24,7 @@ function KanbanList() {
             handleRemoveCard={handleRemoveCard}
             handleExpandCard={handleExpandCard}
             expanded={expandedCardId === item.id}
+            isSidebarOpen={isSidebarOpen}
           />
         ))}
       </ul>

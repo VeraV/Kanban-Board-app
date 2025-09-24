@@ -76,6 +76,7 @@ h1 {
   padding: 0;
   justify-content: flex-start;
   align-items: center;
+  z-index: 9;
 }
 
 .Main-page .navbar img {
@@ -112,23 +113,6 @@ footer {
   justify-content: center;
 }
 
-.card {
-  border: 1px solid grey;
-  margin: 20px;
-  width: 55vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: white;
-  padding: 10px;
-}
-
 .priorityHighHeader {
   background-color: #d57278;
 }
@@ -157,18 +141,28 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  padding: 0;
   list-style: none;
+  margin-left: -310px;
+  z-index: 1;
+  position: relative;
 }
 
 .card {
   border: 1px solid grey;
-  margin: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   transition: all 0.3s ease;
-  width: 45vh; /* expanded size */
+  width: 45vh;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px;
 }
 
 .card.expanded {

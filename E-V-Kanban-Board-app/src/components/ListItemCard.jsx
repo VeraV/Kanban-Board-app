@@ -1,4 +1,10 @@
-function ListItemCard({ item, handleRemoveCard, handleExpandCard, expanded }) {
+function ListItemCard({
+  item,
+  handleRemoveCard,
+  handleExpandCard,
+  expanded,
+  isSidebarOpen,
+}) {
   const {
     id,
     title,
@@ -14,7 +20,13 @@ function ListItemCard({ item, handleRemoveCard, handleExpandCard, expanded }) {
   const classListFooter = `cardFooter priority${priority}Footer`;
 
   return (
-    <div className={`card ${expanded ? "expanded" : ""}`}>
+    <div
+      className={`card ${expanded ? "expanded" : ""}`}
+      style={{
+        transition: "transform 0.3s ease",
+        transform: isSidebarOpen ? "translateX(250px)" : "translateX(0)",
+      }}
+    >
       {/* Header */}
       <section className={classListHeader}>
         <h4>{title}</h4>
