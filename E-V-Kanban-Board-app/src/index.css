@@ -99,7 +99,7 @@ h1 {
   position: absolute;
   right: 0;
   cursor: pointer;
-  background-color: antiquewhite;
+  background-color: #faebd7;
 }
 
 footer {
@@ -110,4 +110,84 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card {
+  border: 1px solid grey;
+  margin: 20px;
+  width: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px;
+}
+
+.priorityHighHeader {
+  background-color: #d57278;
+}
+
+.priorityHighFooter {
+  background-color: #d5727993;
+}
+
+.priorityMediumHeader {
+  background-color: #e9b372;
+}
+
+.priorityMediumFooter {
+  background-color: #e9b37292;
+}
+
+.priorityLowHeader {
+  background-color: #bdb3b9;
+}
+
+.priorityLowFooter {
+  background-color: #e3dee1;
+}
+
+.cardBody {
+  padding: 10px;
+}
+
+.cardHeader h4 {
+  margin: 0;
+}
+
+.cardHeader p {
+  font-size: smaller;
+  margin: 0;
+  padding: 0;
+}
+
+.cardFooter {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: grey;
+}
+
+.cardFooter p {
+  margin: 0;
+  font-size: smaller;
+}
+
+.cardFooter button {
+  border-radius: 6px;
+  border: none;
+  padding: 7px;
+  background: #372f3490;
+  color: #dfdedf;
+}
+
+.cardFooter button:hover {
+  background: #372f34e6;
 }
