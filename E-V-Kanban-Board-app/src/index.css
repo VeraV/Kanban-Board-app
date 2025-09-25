@@ -48,89 +48,23 @@ h1 {
   }
 }
 
-.Home-page .navbar {
+.navbar {
   background-color: chocolate;
   height: 10vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.Home-page .navbar img {
-  width: 8vh;
-  padding: 5px 10px;
-}
-
-.Home-page .navbar h1 {
-  padding-left: 10px;
-}
-
-.Main-page .navbar {
-  background-color: chocolate;
-  height: 10vh;
-  display: flex;
   width: 100vw;
   position: absolute;
   top: 0;
-  margin: 0;
-  padding: 0;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 9;
-}
-
-.Main-page .navbar img {
-  width: 8vh;
-  padding: 5px 10px;
-}
-
-.Main-page .navbar h1 {
-  padding-left: 10px;
-}
-
-.About-us .navbar {
-  background-color: chocolate;
-  height: 10vh;
   display: flex;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding: 0;
   justify-content: flex-start;
   align-items: center;
-  z-index: 9;
 }
 
-.About-us .navbar img {
+.navbar img {
   width: 8vh;
   padding: 5px 10px;
 }
 
-.About-us .navbar h1 {
-  padding-left: 10px;
-}
-
-.Not-found .navbar {
-  background-color: chocolate;
-  height: 10vh;
-  display: flex;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 9;
-}
-
-.Not-found .navbar img {
-  width: 8vh;
-  padding: 5px 10px;
-}
-
-.Not-found .navbar h1 {
+.navbar h1 {
   padding-left: 10px;
 }
 
@@ -150,47 +84,13 @@ h1 {
   background-color: #faebd7;
 }
 
-.Home-page footer {
+footer {
   background-color: antiquewhite;
   height: 5vh;
   width: 100vw;
   bottom: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Main-page footer {
-  background-color: antiquewhite;
-  height: 5vh;
-  width: 100vw;
-  bottom: 0;
+  z-index: 10000;
   position: absolute;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.About-us footer {
-  background-color: antiquewhite;
-  height: 5vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 10;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Not-found footer {
-  background-color: antiquewhite;
-  height: 5vh;
-  width: 100vw;
-  position: absolute;
-  z-index: 10;
   bottom: 0;
   display: flex;
   align-items: center;
@@ -240,6 +140,7 @@ h1 {
   justify-content: flex-start;
   transition: all 0.3s ease;
   width: 45vh;
+  z-index: 1;
 }
 .cardHeader {
   display: flex;
@@ -247,6 +148,7 @@ h1 {
   align-items: center;
   color: white;
   padding: 10px;
+  z-index: 1;
 }
 
 .card.expanded {

@@ -3,64 +3,37 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Logo from "./components/Logo";
-import KanbanList from "./components/List";
 import { useState } from "react";
 import AboutUs from "./pages/AboutUs";
-
+import HomePage from "./pages/Home-page";
+import MainPage from "./pages/MainPage";
+import NotFound from "./pages/NotFound";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <Router>
+      <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+      <Footer />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <div className="Home-page">
-              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-              <Sidebar isOpen={isSidebarOpen} />
-              <Logo isSidebarOpen={isSidebarOpen} />
-              <Footer />
-            </div>
-          }
-        />
+        <Route path="/" element={<HomePage isSidebarOpen={isSidebarOpen} />} />
 
         <Route
           path="/kanban"
-          element={
-            <div className="Main-page">
-              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-              <Sidebar isOpen={isSidebarOpen} />
-              <KanbanList isSidebarOpen={isSidebarOpen} />
-              <Footer />
-            </div>
-          }
+          element={<MainPage isSidebarOpen={isSidebarOpen} />}
         />
 
         <Route
           path="/about"
           element={
             <div className="About-us">
-              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
               <Sidebar isOpen={isSidebarOpen} />
               <AboutUs />
-              <Footer />
             </div>
           }
         />
 
-        <Route
-          path="/*"
-          element={
-            <div className="Not-found">
-              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-              <Sidebar isOpen={isSidebarOpen} />
-              <h1 id="error-msg">This page was not found please return!</h1>
-              <Footer />
-            </div>
-          }
-        />
+        <Route path="/*" element={<NotFound isSidebarOpen={isSidebarOpen} />} />
       </Routes>
     </Router>
   );

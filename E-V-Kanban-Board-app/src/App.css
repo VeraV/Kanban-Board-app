@@ -1,4 +1,9 @@
-.Home-page #side-bar {
+.Main-page {
+  display: flex;
+  margin-top: 10vh; /* so it sits under navbar */
+}
+
+#side-bar {
   display: flex;
   flex-direction: column;
   background-color: rgb(250, 224, 190);
@@ -8,51 +13,9 @@
   box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
   overflow-x: hidden;
   transition: width 0.3s ease;
-}
-
-.Main-page #side-bar {
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(250, 224, 190);
-  width: 20vw;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
-  overflow-x: hidden;
-  transition: width 0.3s ease;
-  z-index: 4;
-}
-
-.About-us #side-bar {
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(250, 224, 190);
-  width: 20vw;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
-  overflow-x: hidden;
-  transition: width 0.3s ease;
-  z-index: 4;
-}
-
-.Not-found #side-bar {
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(250, 224, 190);
-  width: 20vw;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
-  overflow-x: hidden;
-  transition: width 0.3s ease;
-  z-index: 4;
+  z-index: 1000;
+  position: absolute;
+  top: 69.9999px;
 }
 
 #side-bar ol {
@@ -101,6 +64,7 @@
   position: absolute;
   left: 22vw;
   top: 10vh;
+  z-index: 1;
 }
 
 #error-msg {
