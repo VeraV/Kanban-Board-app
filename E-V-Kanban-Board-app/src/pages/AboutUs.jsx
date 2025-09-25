@@ -1,28 +1,37 @@
+import veraImg from "../assets/Vera.jpg";
+import emidioImg from "../assets/Emidio.jpeg";
+
 function AboutUs() {
   return (
     <div className="about-us-container">
-      <h1>Kanban</h1>
       <p>
-        Kanban Single Page Application is a lightweight and intuitive tool
-        designed to help users organize tasks, track progress, and improve
-        productivity. Inspired by the Kanban methodology, it provides a simple
-        and visual way to manage workflows in real time.
+        <strong>Kanban Single Page Application</strong> is a lightweight and
+        intuitive tool designed to help users organize tasks, track progress,
+        and improve productivity.
+        <p>
+          Inspired by the Kanban methodology, it provides a simple and visual
+          way to manage workflows in real time.
+        </p>
       </p>
-      <a>Project Link</a>
-      <h2>Our Team</h2>
-      <section>
-        <h3>Vera Fileyeva</h3>
-        <img />
-        <a>GitHub</a>
-        <a>LinkedIn</a>
-      </section>
+      <a href="https://github.com/emidiop-05/Emidio-Vera-Kanban-Board-app">
+        Project Code here
+      </a>
+      <h1>Our Team</h1>
 
-      <section>
-        <h3>Emidio Pedro</h3>
-        <img />
-        <a>GitHub</a>
-        <a>LinkedIn</a>
+      <section className="team-section">
+        <article>
+          <h2>Emidio Pedro</h2>
+          <img src={emidioImg} />
+          <a href="https://github.com/emidiop-05">GitHub profile</a>
+        </article>
+
+        <article>
+          <h2>Vera Fileyeva</h2>
+          <img src={veraImg} />
+          <a href="https://github.com/VeraV">GitHub profile</a>
+        </article>
       </section>
+      <p>Don't forget to like and subscribe.</p>
     </div>
   );
 }

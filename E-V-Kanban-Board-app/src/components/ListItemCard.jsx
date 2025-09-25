@@ -19,6 +19,9 @@ function ListItemCard({
   const classListHeader = `cardHeader priority${priority}Header`;
   const classListFooter = `cardFooter priority${priority}Footer`;
 
+  //will use these emoji-s for the columns (also need a hird one for "in progress" status)
+  //<span>{status === "Done" ? "✔️" : "❌"}</span>
+
   return (
     <div
       className={`card ${expanded ? "expanded" : ""}`}
@@ -31,29 +34,31 @@ function ListItemCard({
       <section className={classListHeader}>
         <h4>{title}</h4>
         <div className="due-date">
-          <p>Due:</p>
-          <p>{dueDate}</p>
+          <i>
+            <p>Due: {dueDate}</p>
+          </i>
         </div>
-        <span>{status === "Done" ? "✔️" : "❌"}</span>
       </section>
 
       {/* Body (only visible if expanded) */}
       {expanded && (
         <section className="cardBody">
-          <p>{description}</p>
+          <p className="description">{description}</p>
           <p>
             <i>
               <strong>Assigned to: </strong>
               {assignee}
             </i>
           </p>
+          <section className="card-bottom">
+            <span>Created: {createdDate}</span>
+            <button onClick={() => handleRemoveCard(id)}>Delete</button>
+          </section>
         </section>
       )}
 
       {/* Footer */}
       <section className={classListFooter}>
-        <p>Created: {createdDate}</p>
-        <button onClick={() => handleRemoveCard(id)}>Delete</button>
         <button onClick={() => handleExpandCard(id)}>
           {expanded ? "Collapse" : "Expand"}
         </button>
