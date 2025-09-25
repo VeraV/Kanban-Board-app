@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Logo from "./components/Logo";
 import KanbanList from "./components/List";
 import { useState } from "react";
+import AboutUs from "./pages/AboutUs";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,6 +44,7 @@ function App() {
             <div className="About-us">
               <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
               <Sidebar isOpen={isSidebarOpen} />
+              <AboutUs />
               <Footer />
             </div>
           }

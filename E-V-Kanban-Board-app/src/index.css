@@ -294,3 +294,8 @@ h1 {
 .cardFooter button:hover {
   background: #372f34e6;
 }
+
+.about-us-container {
+  margin: 0 auto;
+  width: 300px;
+}
