@@ -11,7 +11,37 @@
 }
 
 .Main-page #side-bar {
-  height: 100vh;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 224, 190);
+  width: 20vw;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 4;
+}
+
+.About-us #side-bar {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 224, 190);
+  width: 20vw;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
+  overflow-x: hidden;
+  transition: width 0.3s ease;
+  z-index: 4;
+}
+
+.Not-found #side-bar {
+  height: 95vh;
   display: flex;
   flex-direction: column;
   background-color: rgb(250, 224, 190);
@@ -71,4 +101,9 @@
   position: absolute;
   left: 22vw;
   top: 10vh;
+}
+
+#error-msg {
+  position: absolute;
+  right: 300px;
 }

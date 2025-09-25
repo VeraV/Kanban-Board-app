@@ -15,6 +15,9 @@ function Sidebar({ isOpen }) {
         <li>
           <Link to="/kanban">Main Page</Link>
         </li>
+        <li>
+          <Link to="/about">About Us</Link>
+        </li>
       </ol>
     </nav>
   );

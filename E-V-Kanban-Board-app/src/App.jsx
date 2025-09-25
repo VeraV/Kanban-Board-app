@@ -32,6 +32,30 @@ function App() {
               <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
               <Sidebar isOpen={isSidebarOpen} />
               <KanbanList isSidebarOpen={isSidebarOpen} />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <div className="About-us">
+              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+              <Sidebar isOpen={isSidebarOpen} />
+              <Footer />
+            </div>
+          }
+        />
+
+        <Route
+          path="/*"
+          element={
+            <div className="Not-found">
+              <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
+              <Sidebar isOpen={isSidebarOpen} />
+              <h1 id="error-msg">This page was not found please return!</h1>
+              <Footer />
             </div>
           }
         />
