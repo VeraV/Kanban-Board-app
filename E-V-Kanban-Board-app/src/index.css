@@ -138,22 +138,32 @@ footer {
   flex-direction: column;
   justify-content: flex-start;
   transition: all 0.3s ease;
-  width: 33vh;
+  width: 35vh;
   z-index: 1;
   position: relative;
   top: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .cardHeader {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: white;
   padding: 10px;
   z-index: 1;
 }
 
+.cardHeader button {
+  border-radius: 6px;
+  border: none;
+  padding: 7px;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
 .card.expanded {
-  width: 33vh;
+  width: 35vh;
   height: 32vh;
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -187,8 +197,19 @@ footer {
   border: none;
   padding: 7px;
   margin-left: 10px;
-  background: #ed4f2b;
   color: #ffffff;
+}
+
+.edit-btn {
+  background: #648be5;
+}
+
+.save-btn {
+  background: #81bc68;
+}
+
+.delete-btn {
+  background: #ed4f2b;
 }
 
 .cardHeader h4 {
@@ -201,20 +222,8 @@ footer {
   padding: 0;
 }
 
-.cardFooter {
-  padding: 10px;
-}
-
-.cardFooter button {
-  border-radius: 6px;
-  border: none;
-  padding: 7px;
-  background: #372f3490;
-  color: #dfdedf;
-}
-
 .card button:hover {
-  background: #372f34e6;
+  background: #372f344b;
 }
 
 .about-us-container {

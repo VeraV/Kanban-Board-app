@@ -88,3 +88,8 @@
   position: absolute;
   right: 300px;
 }
+
+/**Updating**/
+textarea {
+  min-height: 3ln;
+}

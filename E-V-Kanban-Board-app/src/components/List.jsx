@@ -11,6 +11,18 @@ function KanbanList({ isSidebarOpen, isCreateBarOpen }) {
     setItems(items.filter((item) => item.id !== itemIdToRemove));
   }
 
+  function handleUpdateItem(updatedItem) {
+    setItems(
+      items.map((item) => {
+        if (item.id === updatedItem.id) {
+          return updatedItem;
+        } else {
+          return item;
+        }
+      })
+    );
+  }
+
   function handleExpandCard(id) {
     setExpandedCardId((prev) => (prev === id ? null : id));
   }
@@ -36,6 +48,7 @@ function KanbanList({ isSidebarOpen, isCreateBarOpen }) {
             handleExpandCard={handleExpandCard}
             expanded={expandedCardId === item.id}
             isSidebarOpen={isSidebarOpen}
+            handleUpdateItem={handleUpdateItem}
           />
         ))}
       </ul>
