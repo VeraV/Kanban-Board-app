@@ -1,8 +1,9 @@
 import kanbanData from "../assets/kanban.json";
 import { useState } from "react";
 import ListItemCard from "./ListItemCard";
+import CardCreation from "./CardCreator";
 
-function KanbanList({ isSidebarOpen }) {
+function KanbanList({ isSidebarOpen, isCreateBarOpen }) {
   const [items, setItems] = useState(kanbanData);
   const [expandedCardId, setExpandedCardId] = useState(null);
 
@@ -14,8 +15,18 @@ function KanbanList({ isSidebarOpen }) {
     setExpandedCardId((prev) => (prev === id ? null : id));
   }
 
+  function handleAddCard(newCard) {
+    setItems([...items, newCard]);
+  }
+
   return (
     <div id="kanban-list">
+      {isCreateBarOpen && (
+        <div className="create-bar">
+          <CardCreation handleAddCard={handleAddCard} />
+        </div>
+      )}
+
       <ul>
         {items.map((item) => (
           <ListItemCard

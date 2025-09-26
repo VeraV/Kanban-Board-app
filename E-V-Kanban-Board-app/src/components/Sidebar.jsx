@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Sidebar({ isOpen }) {
+function Sidebar({ isOpen, toggleCreateBar }) {
   return (
     <nav
       id="side-bar"
@@ -17,6 +17,11 @@ function Sidebar({ isOpen }) {
         </li>
         <li>
           <Link to="/about">About Us</Link>
+        </li>
+        <li>
+          <button id="create-btn" onClick={toggleCreateBar}>
+            Create
+          </button>
         </li>
       </ol>
     </nav>

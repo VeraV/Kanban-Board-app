@@ -10,7 +10,11 @@ import MainPage from "./pages/MainPage";
 import NotFound from "./pages/NotFound";
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isCreateBarOpen, setIsCreateBarOpen] = useState(false);
 
+  const toggleCreateBar = () => {
+    setIsCreateBarOpen((prev) => !prev);
+  };
   return (
     <Router>
       <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
@@ -20,17 +24,18 @@ function App() {
 
         <Route
           path="/kanban"
-          element={<MainPage isSidebarOpen={isSidebarOpen} />}
+          element={
+            <MainPage
+              isSidebarOpen={isSidebarOpen}
+              isCreateBarOpen={isCreateBarOpen}
+              toggleCreateBar={toggleCreateBar}
+            />
+          }
         />
 
         <Route
           path="/about"
-          element={
-            <div className="About-us">
-              <Sidebar isOpen={isSidebarOpen} />
-              <AboutUs />
-            </div>
-          }
+          element={<AboutUs isSidebarOpen={isSidebarOpen} />}
         />
 
         <Route path="/*" element={<NotFound isSidebarOpen={isSidebarOpen} />} />

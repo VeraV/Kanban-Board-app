@@ -140,6 +140,8 @@ footer {
   transition: all 0.3s ease;
   width: 33vh;
   z-index: 1;
+  position: relative;
+  top: 100px;
 }
 
 .cardHeader {
@@ -223,6 +225,9 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: absolute;
+  top: 120px;
+  right: 300px;
 }
 
 .team-section {
@@ -244,4 +249,51 @@ footer {
 
 .team-section a {
   display: block;
+}
+
+.add-item-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  z-index: 999;
+}
+.add-item-form input,
+.add-item-form textarea,
+.add-item-form select {
+  font-size: 0.7.5rem;
+}
+
+.add-item-form textarea {
+  height: 15px;
+}
+.add-item-form button {
+  font-size: 0.7rem;
+  height: 20px;
+  width: 100px;
+}
+
+.create-bar {
+  position: fixed;
+  top: 70px;
+  left: 300px;
+  right: 0;
+  z-index: 1000;
+  padding: 10px;
+  transform: translateY(-100%);
+  animation: slideDown 0.4s forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.about-us-page #side-bar button {
+  display: none;
+}
+
+.Home-page #side-bar button {
+  display: none;
 }

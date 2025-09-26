@@ -47,6 +47,23 @@
   border-radius: 15px;
 }
 
+#side-bar button {
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: white;
+  text-align: left;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+#side-bar button:hover {
+  color: chocolate;
+}
+
 .logo-image {
   position: absolute;
   top: 80px;
