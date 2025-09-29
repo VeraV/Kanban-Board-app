@@ -49,7 +49,8 @@ h1 {
 }
 
 .navbar {
-  background-color: chocolate;
+  background-color: #006494;
+  color: #fffcf9;
   height: 10vh;
   width: 100vw;
   position: absolute;
@@ -62,6 +63,7 @@ h1 {
 .navbar img {
   width: 8vh;
   padding: 5px 10px;
+  filter: invert(100%);
 }
 
 .navbar h1 {
@@ -81,11 +83,15 @@ h1 {
   position: absolute;
   right: 0;
   cursor: pointer;
-  background-color: #faebd7;
+  background-color: #fad5c7;
+}
+
+#icon-bar:hover img {
+  filter: invert(0);
 }
 
 footer {
-  background-color: antiquewhite;
+  background-color: #fad5c7;
   height: 5vh;
   width: 100vw;
   bottom: 0;

@@ -20,7 +20,7 @@ function Sidebar({ isOpen, toggleCreateBar }) {
         </li>
         <li>
           <button id="create-btn" onClick={toggleCreateBar}>
-            Create
+            ⨁ Create New
           </button>
         </li>
       </ol>
