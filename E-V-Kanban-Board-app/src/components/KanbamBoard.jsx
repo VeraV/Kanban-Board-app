@@ -1,36 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Column from "./Column";
+import kanbanData from "../assets/kanban.json";
+import CardCreation from "./CardCreator";
 
-const initialData = {
-  todo: {
-    id: "todo",
-    title: "To Do",
-    tasks: [
-      { id: "1", title: "Setup project" },
-      { id: "2", title: "Install dependencies" },
-    ],
-  },
-  inprogress: {
-    id: "inprogress",
-    title: "In Progress",
-    tasks: [{ id: "3", title: "Build Kanban board" }],
-  },
-  done: {
-    id: "done",
-    title: "Done",
-    tasks: [{ id: "4", title: "Understand requirements" }],
-  },
-};
+function KanbanBoard({ isCreateBarOpen }) {
+  const [columns, setColumns] = useState({
+    todo: { id: "todo", title: "To Do", tasks: [] },
+    inprogress: { id: "inprogress", title: "In Progress", tasks: [] },
+    done: { id: "done", title: "Done", tasks: [] },
+  });
 
-function KanbanBoard() {
-  const [columns, setColumns] = useState(initialData);
+  useEffect(() => {
+    const todoTasks = kanbanData.filter((t) => t.status === "To Do");
+    const inProgressTasks = kanbanData.filter(
+      (t) => t.status === "In Progress"
+    );
+    const doneTasks = kanbanData.filter((t) => t.status === "Done");
+
+    setColumns({
+      todo: { ...columns.todo, tasks: todoTasks },
+      inprogress: { ...columns.inprogress, tasks: inProgressTasks },
+      done: { ...columns.done, tasks: doneTasks },
+    });
+  }, []);
 
   const onDrop = (taskId, fromCol, toCol) => {
     if (fromCol === toCol) return;
 
     const task = columns[fromCol].tasks.find((t) => t.id === taskId);
     const newFromTasks = columns[fromCol].tasks.filter((t) => t.id !== taskId);
-    const newToTasks = [...columns[toCol].tasks, task];
+    const newToTasks = [
+      ...columns[toCol].tasks,
+      { ...task, status: columns[toCol].title },
+    ];
 
     setColumns({
       ...columns,
@@ -39,19 +41,64 @@ function KanbanBoard() {
     });
   };
 
+  const handleUpdateItem = (colId, updatedTask) => {
+    setColumns((prev) => ({
+      ...prev,
+      [colId]: {
+        ...prev[colId],
+        tasks: prev[colId].tasks.map((task) =>
+          task.id.toString() === updatedTask.id.toString() ? updatedTask : task
+        ),
+      },
+    }));
+  };
+
+  const handleRemoveCard = (colId, taskId) => {
+    setColumns((prev) => ({
+      ...prev,
+      [colId]: {
+        ...prev[colId],
+        tasks: prev[colId].tasks.filter(
+          (task) => task.id.toString() !== taskId.toString()
+        ),
+      },
+    }));
+  };
+
+  const handleAddCard = (status, newCard) => {
+    const key = status.toLowerCase().replace(" ", "");
+    setColumns((prev) => ({
+      ...prev,
+      [key]: {
+        ...prev[key],
+        tasks: [...prev[key].tasks, newCard],
+      },
+    }));
+  };
+
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 1fr)",
-        gap: "16px",
-        padding: "16px",
-      }}
-    >
-      {Object.values(columns).map((col) => (
-        <Column key={col.id} column={col} onDrop={onDrop} />
-      ))}
-    </div>
+    <>
+      {isCreateBarOpen && <CardCreation handleAddCard={handleAddCard} />}
+
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          gap: "16px",
+          padding: "16px",
+        }}
+      >
+        {Object.values(columns).map((col) => (
+          <Column
+            key={col.id}
+            column={col}
+            onDrop={onDrop}
+            onUpdateItem={handleUpdateItem}
+            onRemoveCard={handleRemoveCard}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 

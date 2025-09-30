@@ -7,7 +7,6 @@ function CardCreation({ handleAddCard }) {
     assignee: "",
     status: "To Do",
     priority: "Low",
-    createdDate: "",
     dueDate: "",
   });
 
@@ -22,11 +21,13 @@ function CardCreation({ handleAddCard }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    handleAddCard({
+    const newCard = {
       ...formData,
       id: Date.now(),
       createdDate: new Date().toLocaleDateString(),
-    });
+    };
+
+    handleAddCard(newCard.status, newCard);
 
     setFormData({
       title: "",
@@ -34,14 +35,14 @@ function CardCreation({ handleAddCard }) {
       assignee: "",
       status: "To Do",
       priority: "Low",
-      createdDate: "",
       dueDate: "",
     });
   };
 
   return (
     <form className="add-item-form" onSubmit={handleFormSubmit}>
-      <h3 class="title-new-item">Create New Item</h3>
+      <h3 className="title-new-item">Create New Item</h3>
+
       <input
         type="text"
         name="title"
@@ -50,6 +51,7 @@ function CardCreation({ handleAddCard }) {
         onChange={handleInputChange}
         required
       />
+
       <textarea
         name="description"
         placeholder="Description"
@@ -57,6 +59,7 @@ function CardCreation({ handleAddCard }) {
         onChange={handleInputChange}
         required
       />
+
       <input
         type="text"
         name="assignee"
@@ -64,6 +67,7 @@ function CardCreation({ handleAddCard }) {
         value={formData.assignee}
         onChange={handleInputChange}
       />
+
       <select
         name="status"
         value={formData.status}
@@ -73,6 +77,7 @@ function CardCreation({ handleAddCard }) {
         <option value="In Progress">In Progress</option>
         <option value="Done">Done</option>
       </select>
+
       <select
         name="priority"
         value={formData.priority}
@@ -82,12 +87,14 @@ function CardCreation({ handleAddCard }) {
         <option value="Medium">Medium</option>
         <option value="High">High</option>
       </select>
+
       <input
         type="date"
         name="dueDate"
         value={formData.dueDate}
         onChange={handleInputChange}
       />
+
       <button type="submit">Create Item</button>
     </form>
   );

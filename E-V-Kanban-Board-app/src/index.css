@@ -271,7 +271,7 @@ footer {
   align-items: center;
   gap: 10px;
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
 }
 .add-item-form input,
 .add-item-form textarea,

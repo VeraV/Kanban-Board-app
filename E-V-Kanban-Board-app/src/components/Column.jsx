@@ -1,7 +1,8 @@
+import React from "react";
 import Card from "./Card";
 
-function Column({ column, onDrop }) {
-  const handleDrop = (e) => {
+function Column({ column, onDrop, onUpdateItem, onRemoveCard }) {
+  const handleDropInternal = (e) => {
     e.preventDefault();
     const { taskId, fromCol } = JSON.parse(
       e.dataTransfer.getData("application/json")
@@ -12,17 +13,25 @@ function Column({ column, onDrop }) {
   return (
     <div
       onDragOver={(e) => e.preventDefault()}
-      onDrop={handleDrop}
+      onDrop={handleDropInternal}
       style={{
-        background: "#f4f4f4",
+        background: "#202020ff",
         borderRadius: "8px",
         padding: "12px",
-        minHeight: "200px",
+        minHeight: "500px",
+        width: "300px",
       }}
     >
-      <h2>{column.title}</h2>
+      <h2 style={{ color: "#fff" }}>{column.title}</h2>
+
       {column.tasks.map((task) => (
-        <Card key={task.id} task={task} fromCol={column.id} />
+        <Card
+          key={task.id}
+          task={task}
+          fromCol={column.id}
+          handleRemoveCard={onRemoveCard}
+          handleUpdateItem={onUpdateItem}
+        />
       ))}
     </div>
   );
