@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 
 function Column({ column, onDrop, onUpdateItem, onRemoveCard }) {
@@ -21,6 +20,7 @@ function Column({ column, onDrop, onUpdateItem, onRemoveCard }) {
         minHeight: "500px",
         width: "300px",
       }}
+      className="column"
     >
       <h2 style={{ color: "#fff" }}>{column.title}</h2>
 

@@ -96,3 +96,25 @@
 textarea {
   min-height: 3ln;
 }
+.column {
+  overflow-y: scroll;
+  z-index: 10000;
+}
+.return-to-home {
+  background-color: white;
+  text-decoration: none;
+  position: absolute;
+  right: 700px;
+  margin: 0;
+  padding: 0;
+  bottom: 200px;
+}
+
+.return-to-home li {
+  list-style: none;
+  text-decoration: none;
+}
+
+.return-to-home a {
+  text-decoration: none;
+}
