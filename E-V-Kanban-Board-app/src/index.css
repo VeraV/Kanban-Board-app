@@ -58,6 +58,7 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  z-index: 99999999;
 }
 
 .navbar img {
@@ -270,38 +271,42 @@ footer {
   display: flex;
   align-items: center;
   gap: 10px;
-  position: absolute;
   z-index: 9999;
 }
+
 .add-item-form input,
 .add-item-form textarea,
 .add-item-form select {
-  font-size: 0.7.5rem;
+  font-size: 0.75rem; /* ✅ fixed typo */
 }
 
 .add-item-form textarea {
   height: 15px;
 }
+
 .add-item-form button {
   font-size: 0.7rem;
   height: 20px;
   width: 100px;
 }
 
+/* The fixed create bar */
 .create-bar {
   position: fixed;
-  top: 70px;
+  top: 45px;
   left: 300px;
   right: 0;
   z-index: 1000;
   padding: 10px;
-  transform: translateY(-100%);
+  border-radius: 6px;
+
+  transform: translateY(-40%);
   animation: slideDown 0.4s forwards;
 }
 
 @keyframes slideDown {
   to {
-    transform: translateY(0%);
+    transform: translateY(0);
   }
 }
 

@@ -40,7 +40,7 @@ function CardCreation({ handleAddCard }) {
   };
 
   return (
-    <form className="add-item-form" onSubmit={handleFormSubmit}>
+    <form className="add-item-form create-bar" onSubmit={handleFormSubmit}>
       <h3 className="title-new-item">Create New Item</h3>
 
       <input

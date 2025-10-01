@@ -1,7 +1,7 @@
 .Main-page {
   display: flex;
-  margin-top: 10vh; /* so it sits under navbar */
-  background-color: #fffcf9;
+  margin-top: 10vh;
+  background-color: #242424;
 }
 
 #side-bar {
@@ -14,7 +14,7 @@
   box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
   overflow-x: hidden;
   transition: width 0.3s ease;
-  z-index: 1000;
+  z-index: 100000;
   position: absolute;
   top: 69.9999px;
 }
@@ -92,13 +92,12 @@
   right: 300px;
 }
 
-/**Updating**/
 textarea {
   min-height: 3ln;
 }
 .column {
   overflow-y: scroll;
-  z-index: 10000;
+  z-index: 9000;
 }
 .return-to-home {
   background-color: white;

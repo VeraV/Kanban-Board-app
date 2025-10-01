@@ -18,7 +18,10 @@ function Column({ column, onDrop, onUpdateItem, onRemoveCard }) {
         borderRadius: "8px",
         padding: "12px",
         minHeight: "500px",
-        width: "300px",
+        width: "380px",
+        position: "relative",
+        top: "20px",
+        right: "0",
       }}
       className="column"
     >

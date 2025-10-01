@@ -3,7 +3,7 @@ import Column from "./Column";
 import kanbanData from "../assets/kanban.json";
 import CardCreation from "./CardCreator";
 
-function KanbanBoard({ isCreateBarOpen }) {
+function KanbanBoard({ isCreateBarOpen, isSidebarOpen }) {
   const [columns, setColumns] = useState({
     todo: { id: "todo", title: "To Do", tasks: [] },
     inprogress: { id: "inprogress", title: "In Progress", tasks: [] },
@@ -82,10 +82,17 @@ function KanbanBoard({ isCreateBarOpen }) {
 
       <div
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          display: "flex",
+          justifyContent: "flex-start",
           gap: "16px",
-          padding: "16px",
+          padding: "0",
+          margin: "0",
+          backgroundColor: "#242424",
+          width: "95.6%",
+          marginTop: "-54px",
+          marginLeft: "auto",
+          transition: "transform 0.3s ease",
+          transform: isSidebarOpen ? "translateX(250px)" : "translateX(0)",
         }}
       >
         {Object.values(columns).map((col) => (

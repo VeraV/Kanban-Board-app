@@ -13,7 +13,10 @@ function MainPage({ isSidebarOpen }) {
     <div className="Main-page">
       <Sidebar isOpen={isSidebarOpen} toggleCreateBar={toggleCreateBar} />
 
-      <KanbanBoard isCreateBarOpen={isCreateBarOpen} />
+      <KanbanBoard
+        isSidebarOpen={isSidebarOpen}
+        isCreateBarOpen={isCreateBarOpen}
+      />
     </div>
   );
 }
