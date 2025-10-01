@@ -30,7 +30,6 @@
 }
 
 #side-bar a {
-  background: none;
   font-size: 30px;
   border: none;
   cursor: pointer;
@@ -48,7 +47,12 @@
 }
 
 #side-bar a:active {
-  background-color: #b8620b;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.selected {
+  background-color: #fffcf9;
   padding: 10px;
   border-radius: 15px;
 }
