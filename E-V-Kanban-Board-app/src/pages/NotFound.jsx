@@ -1,7 +1,6 @@
-import Sidebar from "../components/Sidebar";
 import { Link } from "react-router-dom";
 
-function NotFound({ isSidebarOpen }) {
+function NotFound() {
   return (
     <div className="Not-found">
       <h1 id="error-msg">This page was not found please return!</h1>
@@ -10,7 +9,6 @@ function NotFound({ isSidebarOpen }) {
           <Link to="/">Home Page</Link>
         </li>
       </ol>
-      <Sidebar isOpen={isSidebarOpen} />
     </div>
   );
 }

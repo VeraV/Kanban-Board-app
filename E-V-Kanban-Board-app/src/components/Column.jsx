@@ -15,7 +15,6 @@ function Column({ column, onDrop, onUpdateItem, onRemoveCard }) {
       onDrop={handleDropInternal}
       style={{
         background: "#202020ff",
-        borderRadius: "8px",
         padding: "12px",
         minHeight: "500px",
         width: "380px",

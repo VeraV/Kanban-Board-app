@@ -14,7 +14,7 @@
   box-shadow: 15px 0 10px rgba(0, 0, 0, 0.3);
   overflow-x: hidden;
   transition: width 0.3s ease;
-  z-index: 100000;
+  z-index: 1000;
   position: absolute;
   top: 69.9999px;
 }
@@ -89,7 +89,8 @@
 
 #error-msg {
   position: absolute;
-  right: 300px;
+  right: 450px;
+  top: 300px;
 }
 
 textarea {
@@ -100,13 +101,12 @@ textarea {
   z-index: 9000;
 }
 .return-to-home {
-  background-color: white;
   text-decoration: none;
   position: absolute;
-  right: 700px;
+  right: 730px;
+  top: 400px;
   margin: 0;
   padding: 0;
-  bottom: 200px;
 }
 
 .return-to-home li {
