@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar({ isOpen, toggleCreateBar }) {
   return (
@@ -10,13 +10,28 @@ function Sidebar({ isOpen, toggleCreateBar }) {
     >
       <ol>
         <li>
-          <Link to="/">Home Page</Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "selected" : "")}
+          >
+            Home Page
+          </NavLink>
         </li>
         <li>
-          <Link to="/kanban">Main Page</Link>
+          <NavLink
+            to="/kanban"
+            className={({ isActive }) => (isActive ? "selected" : "")}
+          >
+            Main Page
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About Us</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) => (isActive ? "selected" : "")}
+          >
+            About
+          </NavLink>
         </li>
         <li>
           <button id="create-btn" onClick={toggleCreateBar}>

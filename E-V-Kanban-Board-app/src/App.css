@@ -47,6 +47,12 @@
   border-radius: 15px;
 }
 
+#side-bar a:active {
+  background-color: #b8620b;
+  padding: 10px;
+  border-radius: 15px;
+}
+
 #side-bar button {
   background: none;
   font-size: 20px;
