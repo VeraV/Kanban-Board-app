@@ -1,16 +1,13 @@
-import Sidebar from "../components/Sidebar";
 import veraImg from "../assets/Vera.jpg";
 import emidioImg from "../assets/Emidio.jpeg";
 
-function AboutUs({ isSidebarOpen }) {
+function AboutUs() {
   return (
     <div className="about-us-page">
-      <Sidebar isOpen={isSidebarOpen} />
       <div
         className="about-us-container"
         style={{
           transition: "transform 0.3s ease",
-          transform: isSidebarOpen ? "translateX(250px)" : "translateX(0)",
         }}
       >
         <p>

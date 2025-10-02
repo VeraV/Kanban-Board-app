@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Sidebar from "../components/Sidebar";
 import KanbanBoard from "../components/KanbanBoard";
 
-function MainPage({ isSidebarOpen }) {
+function MainPage() {
   const [isCreateBarOpen, setIsCreateBarOpen] = useState(false);
 
   const toggleCreateBar = () => {
@@ -11,12 +10,7 @@ function MainPage({ isSidebarOpen }) {
 
   return (
     <div className="Main-page">
-      <Sidebar isOpen={isSidebarOpen} toggleCreateBar={toggleCreateBar} />
-
-      <KanbanBoard
-        isSidebarOpen={isSidebarOpen}
-        isCreateBarOpen={isCreateBarOpen}
-      />
+      <KanbanBoard isCreateBarOpen={isCreateBarOpen} />
     </div>
   );
 }

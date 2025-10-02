@@ -1,10 +1,9 @@
 .Main-page {
   display: flex;
   margin-top: 10vh;
-  background-color: #242424;
 }
 
-#side-bar {
+/*#side-bar {
   display: flex;
   flex-direction: column;
   background-color: #fad5c7;
@@ -49,15 +48,9 @@
 #side-bar a:active {
   padding: 10px;
   border-radius: 15px;
-}
+}*/
 
-.selected {
-  background-color: #fffcf9;
-  padding: 10px;
-  border-radius: 15px;
-}
-
-#side-bar button {
+/*#side-bar button {
   background: none;
   font-size: 20px;
   font-weight: bold;
@@ -75,7 +68,7 @@
 #side-bar button:hover {
   background-color: #fffcf9;
   color: #8cae68;
-}
+}*/
 
 .logo-image {
   position: absolute;

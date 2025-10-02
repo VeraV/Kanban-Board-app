@@ -2,7 +2,6 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import { useState } from "react";
 import AboutUs from "./pages/AboutUs";
 import HomePage from "./pages/Home-page";
@@ -18,7 +17,6 @@ function App() {
   return (
     <Router>
       <NavBar toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} />
-      <Footer />
       <Routes>
         <Route path="/" element={<HomePage isSidebarOpen={isSidebarOpen} />} />
 

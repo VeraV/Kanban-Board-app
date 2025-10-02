@@ -1,11 +1,9 @@
-import Sidebar from "../components/Sidebar";
 import Logo from "../components/Logo";
 
-function HomePage({ isSidebarOpen }) {
+function HomePage() {
   return (
     <div className="Home-page">
-      <Sidebar isOpen={isSidebarOpen} />
-      <Logo isSidebarOpen={isSidebarOpen} />
+      <Logo />
     </div>
   );
 }

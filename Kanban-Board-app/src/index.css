@@ -5,7 +5,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,9 +13,7 @@
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  font-weight: 700;
 }
 
 body {
@@ -25,28 +22,22 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #242424;
-}
-
-h1 {
-  font-size: 2.2em;
-  line-height: 1.1;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #5982a3;
+    color: #006494;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #437df1;
   }
   button {
     background-color: #f9f9f9;
   }
 }
 
-.navbar {
+nav {
   background-color: #006494;
   color: #fffcf9;
   height: 10vh;
@@ -54,22 +45,65 @@ h1 {
   position: absolute;
   top: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  z-index: 99999999;
+  flex: 1 1 30%;
 }
 
-.navbar img {
+.logo-name {
+  display: flex;
+  align-items: center;
+  flex: 1 1 30%;
+}
+
+.logo-name img {
   width: 8vh;
   padding: 5px 10px;
   filter: invert(100%);
 }
 
-.navbar h1 {
+.logo-name h1 {
   padding-left: 10px;
+
+  font-size: 2.2em;
 }
 
-#icon-bar {
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 1 30%;
+}
+
+.nav-links a {
+  font-weight: 700;
+  color: #fffcf9;
+  text-decoration: inherit;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #fffcf9;
+}
+
+.nav-links a:hover {
+  color: #006494;
+  background-color: #fffcf9;
+}
+
+.nav-links .selected {
+  color: #006494;
+  background-color: #fffcf9;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.git-link {
+  flex: 1 1 30%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+/*#icon-bar {
   all: unset;
   position: absolute;
   right: 0;
@@ -87,9 +121,9 @@ h1 {
 
 #icon-bar:hover img {
   filter: invert(0);
-}
+}*/
 
-footer {
+/*footer {
   background-color: #fad5c7;
   height: 5vh;
   width: 100vw;
@@ -100,7 +134,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+}*/
 
 .priorityHighHeader {
   background-color: #d57278;
@@ -313,8 +347,4 @@ footer {
 
 .Home-page #side-bar button {
   display: none;
-}
-
-a:active {
-  color: red;
 }
