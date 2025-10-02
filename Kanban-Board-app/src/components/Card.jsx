@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Card({ task, fromCol, handleUpdateItem, handleRemoveCard }) {
   const { id, title, description, assignee, priority, createdDate, dueDate } =

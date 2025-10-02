@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Sidebar from "../components/Sidebar";
-import KanbanBoard from "../components/KanbamBoard";
+import KanbanBoard from "../components/KanbanBoard";
 
 function MainPage({ isSidebarOpen }) {
   const [isCreateBarOpen, setIsCreateBarOpen] = useState(false);
